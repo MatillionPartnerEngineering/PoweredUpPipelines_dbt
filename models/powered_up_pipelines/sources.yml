@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: 
+    #database: "{{ env_var('target_database') }}"
+    #schema: "{{ env_var('target_schema') }}"
+    database: "DEV_DB"
+    schema: "KAREY"
+    tables:
+      - name: src_charlies_shoe_emporium_sales
+        columns:
+          - name: transaction_id
+            tests:
+              - unique
+              - not_null
+          - name: sale_indicator
+            tests: 
+              - dbt_expectations.expect_column_to_exist
+              - accepted_values:
+                - values: ['TRUE,'FALSE']
+        loaded_at_field: last_updated
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 5
+            period: day
