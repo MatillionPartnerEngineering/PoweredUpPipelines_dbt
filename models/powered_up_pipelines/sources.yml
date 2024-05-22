@@ -11,22 +11,22 @@ sources:
     database: "DEV_DB"
     schema: "KAREY"
     tables:
-      - name: src_charlies_shoe_emporium_sales
+      - name: SRC_CHARLIES_SHOE_EMPORIUM_SALES
         quoting:
           database: true
           schema: true
           identifier: true
         columns:
-          - name: transaction_id
+          - name: TRANSACTION_ID
             tests:
               - unique
               - not_null
-          - name: sale_indicator
+          - name: SALE_INDICATOR
             tests: 
               - dbt_expectations.expect_column_to_exist
               - accepted_values:
-                  values: ['TRUE','FALSE']
-        loaded_at_field: last_updated
+                  values: ['true','false']
+        loaded_at_field: LAST_UPDATED
         freshness:
           warn_after:
             count: 1
