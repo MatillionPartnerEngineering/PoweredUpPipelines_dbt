@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: 
+  - name: src_powered_up_pipelines
     #database: "{{ env_var('target_database') }}"
     #schema: "{{ env_var('target_schema') }}"
     database: "DEV_DB"
