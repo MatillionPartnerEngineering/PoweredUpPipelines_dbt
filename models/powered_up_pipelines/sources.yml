@@ -2,12 +2,20 @@ version: 2
 
 sources:
   - name: src_powered_up_pipelines
+    quoting: 
+      database: true
+      schema: true
+      identifier: true
     #database: "{{ env_var('target_database') }}"
     #schema: "{{ env_var('target_schema') }}"
     database: "DEV_DB"
     schema: "KAREY"
     tables:
       - name: src_charlies_shoe_emporium_sales
+        quoting:
+          database: true
+          schema: true
+          identifier: true
         columns:
           - name: transaction_id
             tests:
