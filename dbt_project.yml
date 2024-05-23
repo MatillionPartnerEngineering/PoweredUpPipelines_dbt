@@ -40,6 +40,9 @@ quoting:
   schema: true
   identifier: true
 
+tests:
+  +store_failures: true
+  +schema: KAREY_DBT_FAILURES
 
 models:
   my_new_project:

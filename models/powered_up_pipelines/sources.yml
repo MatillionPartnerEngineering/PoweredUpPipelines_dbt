@@ -19,13 +19,22 @@ sources:
         columns:
           - name: TRANSACTION_ID
             tests:
-              - unique
-              - not_null
+              - unique:
+                  config:
+                    store_failures: true
+              - not_null:
+                  config:
+                    store_failures: true                
           - name: SALE_INDICATOR
             tests: 
-              - dbt_expectations.expect_column_to_exist
+              - dbt_expectations.expect_column_to_exist:
+                  config:
+                    store_failures: true                    
               - accepted_values:
+                  #values: ['true','false']
                   values: ['true','false']
+                  config:
+                    store_failures: true                  
         loaded_at_field: LAST_UPDATED
         freshness:
           warn_after:
