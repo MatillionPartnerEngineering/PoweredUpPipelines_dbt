@@ -22,17 +22,17 @@ sources:
               - unique:
                   config:
                     store_failures: true
-              #- not_null:
-              #    config:
-              #      store_failures: true                
+              - not_null:
+                  config:
+                    store_failures: true                
           - name: SALE_INDICATOR
             tests: 
               - dbt_expectations.expect_column_to_exist:
                   config:
                     store_failures: true                    
               - accepted_values:
-                  values: ['true','false']
-                  #values: ['false']
+                  #values: ['true','false']
+                  values: ['false']
                   config:
                     store_failures: true                  
         loaded_at_field: LAST_UPDATED
