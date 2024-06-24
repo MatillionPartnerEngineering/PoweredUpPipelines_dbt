@@ -31,8 +31,8 @@ sources:
                   config:
                     store_failures: true                    
               - accepted_values:
-                  #values: ['true','false']
-                  values: ['false']
+                  values: ['true','false']
+                  #values: ['false']
                   config:
                     store_failures: true                  
         loaded_at_field: LAST_UPDATED
